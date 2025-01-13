@@ -29,3 +29,6 @@ line by line.
 - Add functionality to check if there are no more available parking validation codes left
 - Add a button to handle cost center codes for parking validation
 - Improve the UI to look more modern instead of something from Windows 95
+- Add a button that lets an employee get another code if it doesn't work
+- Add a button that lets an employee correct their information that they entered
+- Add some instructions for employees in case they have no idea how to do parking validation
