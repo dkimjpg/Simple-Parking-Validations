@@ -30,5 +30,6 @@ line by line.
 - Add a button to handle cost center codes for parking validation
 - Improve the UI to look more modern instead of something from Windows 95
 - Add a button that lets an employee get another code if it doesn't work
-- Add a button that lets an employee correct their information that they entered
+- Add a button that lets an employee correct the information that they entered
 - Add some instructions for employees in case they have no idea how to do parking validation
+- Add a mechanism that determines if it is before or after 12 pm to give out the correct type of validation code (6-10 hr or 2-6 hr codes)
