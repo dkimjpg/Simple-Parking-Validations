@@ -24,12 +24,14 @@ line by line.
 - Handles a few other potential requests that a front desk might get from employees and visitors
 
 # To-Do
-- Add functionality to the parking validation code distribution so employees can actually get a code instead of the placeholder text
+- [ ] Add functionality to the parking validation code distribution so employees can actually get a code instead of the placeholder text
   - Will need to write some JavaScript code for this, specifically some code to read from a csv file and write to a csv file
-- Add functionality to check if there are no more available parking validation codes left
-- Add a button to handle cost center codes for parking validation
-- Improve the UI to look more modern instead of something from Windows 95
-- Add a button that lets an employee get another code if it doesn't work
-- Add a button that lets an employee correct the information that they entered
-- Add some instructions for employees in case they have no idea how to do parking validation
-- Add a mechanism that determines if it is before or after 12 pm to give out the correct type of validation code (6-10 hr or 2-6 hr codes)
+- [ ] Add functionality to check if there are no more available parking validation codes left
+- [x] Add a button to handle cost center codes for parking validation
+- [ ] Make sure that cost center codes are also labled as IO codes, as those also work for guests
+- [ ] Improve the UI to look more modern instead of something from Windows 95
+- [x] Add a button that lets an employee get another code if it doesn't work
+- [ ] ~~Add a button that lets an employee correct the information that they entered~~
+  - On second thought, this may not be the best idea since showing their name and alias onscreen for the next employee to see if they don't return to the home screen would be a breach of privacy
+- [x] Add some instructions for employees in case they have no idea how to do parking validation
+- [ ] Add a mechanism that determines if it is before or after 12 pm to give out the correct type of validation code (6-10 hr or 2-6 hr codes)
