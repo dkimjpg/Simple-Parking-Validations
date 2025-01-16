@@ -1,8 +1,69 @@
 <!DOCTYPE html>
 <html>
+<style>
+     /* Popup container */
+ .popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  /* The actual popup (appears on top) */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 320px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    top: 125%;
+    left: 1%;
+    margin-left: -125px;
+  }
+  
+  /* Popup arrow */
+  .popup .popuptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+  }
+  
+  /* Toggle this class when clicking on the popup container (hide and show the popup) */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  } 
+</style>
 <head>
     <title>Parking Code</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        // When the user clicks on <div>, open the popup
+        function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+    </script>
 </head>
 <body>
 
@@ -11,15 +72,20 @@
     <h1>insert code here</h1>
     <br>
     <br>
-    <h4>How to use a Parking Validation Code</h4>
+    <h4>Click below to know how to use a Parking Validation Code</h4>
+    
+    <div class="popup" onclick="myFunction()">Click me!
+        <span class="popuptext" id="myPopup"><p>You'll need to use ParkRTC app or visit the website at (insert website here). 
+            Parking validation codes can only be used in the purple parking garage, 
+            otherwise known as Zone 200. Enter in that zone number when the you are prompted to
+            and then enter in your car's details shortly after (license plate, make, model, etc.).
+            Select Daily Max as your method of coverage and then select validation afterwards.
+            Enter in your parking validation code and confirm your parking validation.
+        </p></span>
+    </div> 
     <br>
-    <p>You'll need to use ParkRTC app or visit the website at (insert website here). 
-        Parking validation codes can only be used in the purple parking garage, 
-        otherwise known as Zone 200. Enter in that zone number when the you are prompted to
-        and then enter in your car's details shortly after (license plate, make, model, etc.).
-        Select Daily Max as your method of coverage and then select validation afterwards.
-        Enter in your parking validation code and confirm your parking validation.
-    </p>
+    <br>
+    
 
     <a href="index.html">
         <button type="button">Return to start</button>
