@@ -28,7 +28,7 @@ line by line.
   - Will need to write some JavaScript code for this, specifically some code to read from a csv file and write to a csv file
 - [ ] Add functionality to check if there are no more available parking validation codes left
 - [x] Add a button to handle cost center codes for parking validation
-- [ ] Make sure that cost center codes are also labled as IO codes, as those also work for guests
+- [x] Make sure that cost center codes are also labled as IO codes, as those also work for guests
 - [ ] Improve the UI to look more modern instead of something from Windows 95
 - [x] Add a button that lets an employee get another code if it doesn't work
 - [ ] ~~Add a button that lets an employee correct the information that they entered~~
