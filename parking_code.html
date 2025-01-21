@@ -8,7 +8,7 @@
     cursor: pointer;
   }
   
-  /* The actual popup (appears on top) */
+  /* The actual popup (appears on top (now it's on the bottom)) */
   .popup .popuptext {
     visibility: hidden;
     width: 320px;
@@ -18,10 +18,10 @@
     border-radius: 6px;
     padding: 8px 0;
     position: absolute;
-    z-index: 1;
-    top: 125%;
+    z-index: 1;    
+    top: 90%;
     left: 1%;
-    margin-left: -125px;
+    margin-left: 45px;
   }
   
   /* Popup arrow */
@@ -42,6 +42,16 @@
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s
   }
+
+  .popup .hide {
+    visibility: visible;
+    -webkit-animation: fadeOut 1s;
+    animation: fadeOut 1s;
+  }
+
+  .popup .makeInvisible {
+    visibility: hidden;
+  }
   
   /* Add animation (fade in the popup) */
   @-webkit-keyframes fadeIn {
@@ -53,15 +63,40 @@
     from {opacity: 0;}
     to {opacity:1 ;}
   } 
+
+  @-webkit-keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
+
+  @keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
 </style>
 <head>
     <title>Parking Code</title>
     <link rel="stylesheet" href="styles.css">
+    <!--<link rel="stylesheet" href="popup.css">-->
     <script>
         // When the user clicks on <div>, open the popup
-        function myFunction() {
+        let popupToggle = 0
+         function myFunction() {
+            if (popupToggle == 0) {
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
+            popupToggle = 1;
+            }
+        }
+        function closePopup() {
+          if (popupToggle == 1) {
+            var popup = document.getElementById("myPopup");
+            //popup.classList.toggle("show");
+            popup.classList.toggle("hide");
+            const time = setTimeout(popup.classList.toggle("makeInvisible"), 1500);
+            //popup.classList.toggle("makeInvisible");
+            popupToggle = 0;
+          }
         }
     </script>
 </head>
@@ -72,9 +107,9 @@
     <h1>insert code here</h1>
     <br>
     <br>
-    <h4>Click below to know how to use a Parking Validation Code</h4>
+    <!--<h4>Click below to know how to use a Parking Validation Code</h4>-->
     
-    <div class="popup" onclick="myFunction()">Click me!
+    <div class="popup" onclick="myFunction()" onmouseleave="closePopup()"> <h4 style="color: blue;"><u>Learn more about how to use a Parking Validation Code</u></h4>
         <span class="popuptext" id="myPopup"><p>You'll need to use ParkRTC app or visit the website at (insert website here). 
             Parking validation codes can only be used in the purple parking garage, 
             otherwise known as Zone 200. Enter in that zone number when the you are prompted to
