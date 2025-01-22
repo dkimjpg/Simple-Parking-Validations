@@ -82,18 +82,19 @@
         // When the user clicks on <div>, open the popup
         let popupToggle = 0
          function myFunction() {
-            if (popupToggle == 0) {
+            //if (popupToggle == 0) {
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
             popupToggle = 1;
-            }
+            //}
+            
         }
         function closePopup() {
           if (popupToggle == 1) {
             var popup = document.getElementById("myPopup");
             //popup.classList.toggle("show");
-            popup.classList.toggle("hide");
-            const time = setTimeout(popup.classList.toggle("makeInvisible"), 1500);
+            setTimeout(popup.classList.toggle("hide"), 1000);
+            //setTimeout(popup.classList.toggle("makeInvisible"), 1500);
             //popup.classList.toggle("makeInvisible");
             popupToggle = 0;
           }
@@ -109,7 +110,7 @@
     <br>
     <!--<h4>Click below to know how to use a Parking Validation Code</h4>-->
     
-    <div class="popup" onclick="myFunction()" onmouseleave="closePopup()"> <h4 style="color: blue;"><u>Learn more about how to use a Parking Validation Code</u></h4>
+    <div class="popup" onclick="myFunction()"> <h4 style="color: blue;"><u>Learn more about how to use a Parking Validation Code</u></h4>
         <span class="popuptext" id="myPopup"><p>You'll need to use ParkRTC app or visit the website at (insert website here). 
             Parking validation codes can only be used in the purple parking garage, 
             otherwise known as Zone 200. Enter in that zone number when the you are prompted to

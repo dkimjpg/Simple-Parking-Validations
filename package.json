@@ -1,0 +1,22 @@
+{
+  "name": "parking-code-reader",
+  "version": "1.0.0",
+  "description": "Reads parking codes from Excel files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dkimjpg/Simple-Parking-Validations.git"
+  },
+  "author": "David Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dkimjpg/Simple-Parking-Validations/issues"
+  },
+  "homepage": "https://github.com/dkimjpg/Simple-Parking-Validations#readme",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
