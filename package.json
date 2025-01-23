@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/dkimjpg/Simple-Parking-Validations#readme",
   "dependencies": {
-    "xlsx": "^0.18.5"
+    "xlsx": "file:vendor/xlsx-0.20.3.tgz"
   }
 }
