@@ -10,5 +10,6 @@ for(let i = 0; i < sheets.length; i++) {
         data.push(res)
     })
 }
-
+//Might be best to put all these lines in a queue (or a stack, it doesn't really matter) so I can just 
+//pop after one code is used. When the queue is empty, that's how I'll know that I'm out of codes.
 console.log(data);
