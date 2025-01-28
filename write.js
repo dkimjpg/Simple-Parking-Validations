@@ -1,6 +1,8 @@
 //const reader = require('xlsx');
 //import XLSX from 'xlsx';
-//const XLSX = require("xlsx");
+const XLSX = require("xlsx");
+const path = require('path');
+
 const infoButton = document.getElementById("infoSubmission");
 //const names = document.getElementById("nameInfo");
 //const alias = document.getElementById("aliasInfo");
@@ -25,60 +27,30 @@ infoButton.addEventListener('click', function() {
         return;
     }
 
-    // get today's date
-    const today = new Date().toLocaleDateString();
-    const dateString = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
+    try {
+        const filePath = path.join(__dirname, 'parkingDataTest2.xlsx');
+        const workbook = XLSX.readFile(filePath);
+        const sheetName = 'Sheet1';
+        const worksheet = workbook.Sheets[sheetName];
 
-    const blob = new Blob([dateString], {type: 'text/csv'});
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'parking_data.csv';
-    link.click();
-    /*
-    const workbook = XLSX.readFile('parkingDataTest2.xlsx');
-    const sheetName = 'Sheet1';
-    const worksheet = workbook.Sheets[sheetName];
-    */
-    
-    // Data to append
-    const newData = [
-        [dateString],
-        [aliasText],
-        [nameText]
-    ];
-    
-    /*
-    const newData = [
-        ["1/23/2025"],
-        ["dkdk"],
-        ["Dav K"]
-    ];
-    */
+        // get today's date
+        const today = new Date().toLocaleDateString();
 
-    // Append data to the sheet
-    XLSX.utils.sheet_add_aoa(worksheet, [newData], {origin: -1});
+        const newData = [
+            [today, aliasText, nameText]
+        ];
 
-    // Write the updated workbook to a file
-    XLSX.writeFile(workbook, 'parkingDataTest2.xlsx');
-    console.log('Button clicked');
-    //alert('Button clicked from external script!');
-    window.location.href = 'parking_code.html';
+        // Append data to the sheet
+        XLSX.utils.sheet_add_aoa(worksheet, newData, {origin: -1});
+
+        // Write the updated workbook to a file
+        XLSX.writeFile(workbook, filePath);
+
+        console.log('Data written successfully');
+        window.location.href = 'parking_code.html';
+    }
+    catch (error) {
+        console.error('Error:', error);
+        alert('Error saving data:' + error.message);
+    }  
 });
-
-//get last row in sheet
-//const lastRow = XLSX.utils.decode_range(worksheet['!ref']).e.r;
-
-
-
-
-
-
-
-/*
-newData.forEach(row => {
-    worksheet[`A${lastRow + 1}`] = { v: row[0] };
-    worksheet[`B${lastRow + 1}`] = { v: row[1] };
-    //lastRow++;
-});*/
-
-
