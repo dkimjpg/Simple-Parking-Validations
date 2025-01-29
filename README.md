@@ -1,5 +1,5 @@
 # About this app:
-This is just a simple website I made to handle giving out parking validation codes. I don't intend to use it for any commercial purposes, 
+This is just a simple JavaScript app I made to handle giving out parking validation codes. I don't intend to use it for any commercial purposes, 
 it's just something I coded up in about half an hour during some off time during work. Boredom will do that to you.
 
 Anyway, it's meant to address some of the most common requests at the front desk of an office's main lobby. It's still in development as 
@@ -7,6 +7,8 @@ of this writing (which would be 1/13/2025, and if I decide to update this furthe
 I plan on improving it with a more modern but simplistic design as I work on this. If for some reason you decide to use this for your
 own parking validation code system, you're putting a lot of sensitive employee data at risk. This is just a personal project, nothing
 special.
+
+UPDATE (1/28/2025): This project went from using only pure JavaScript to using Node and then I ended up having to use Electron to make this an app that runs locally on a computer ever since I learned that it isn't possible to directly modify excel or csv files from a website. To do that, I needed to use Electron, so now I've ended up creating a desktop app.
 
 # How parking validation code distribution works:
 When an employee enters their name and alias information into the designated areas, a preexisting csv file with the parking validation codes 
@@ -18,6 +20,8 @@ depending on specific usage.
 
 For those of you who don't know what a csv file is, it's a basic spreadsheet file where columns are separated by commas, and rows are separated
 line by line.
+
+UPDATE (1/28/2025): This project now uses excel files (.xlsx) instead of CSV files (.csv) for spreadsheets, to make it more convenient for users.
 
 # Features
 - Offers parking validation codes to employees
