@@ -5,22 +5,16 @@ const infoButton = document.getElementById("infoSubmission");
 
 infoButton.addEventListener('click', function() {
     const nameText = document.getElementById("nameInfo").value.trim();
-    const aliasText = document.getElementById("aliasInfo").value.trim();
+    const ioCode = document.getElementById("ioCode").value.trim();
+    const providerName = document.getElementById("provider").value.trim();
 
-    if (!nameText || !aliasText) {
-        alert('Please enter both name and alias');
-        setTimeout(() => {
-            if (!nameText) {
-                document.getElementById("nameInfo").focus();
-            } else if (!aliasText) {
-                document.getElementById("aliasInfo").focus();
-            }
-        }, 100);
+    if (!nameText || !ioCode || !providerName ) {
+        alert('Please enter name, IO/Cost Center code, and code provider');
         return;
     }
 
     try {
-        const filePath = path.join(__dirname, 'parkingDataTest2.xlsx');
+        const filePath = path.join(__dirname, 'parkingDataTestIOCC.xlsx');
         const workbook = XLSX.readFile(filePath);
         const sheetName = 'Sheet1';
         const worksheet = workbook.Sheets[sheetName];
@@ -28,9 +22,9 @@ infoButton.addEventListener('click', function() {
         // get today's date
         const today = new Date().toLocaleDateString();
 
-        // puts together date, employee alias, and employee name
+        // puts together date, code provider's name, guest's name, and IO/Cost Center code
         const newData = [
-            [today, aliasText, nameText]
+            [today, providerName, nameText, ioCode]
         ];
 
         // Append data to the sheet

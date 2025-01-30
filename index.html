@@ -12,13 +12,22 @@
     <a href="info_entry.html">
         <button type="button">Parking Validation</button>
     </a>
-    <button type="button">Temporary Badge</button> <br>
-    <button type="button">Need Assistance</button>
+    <button onclick="tempBadge()" type="button">Temporary Badge</button> <br>
+    <button onclick="assist()" type="button">Need Assistance</button>
 
     <!--
     <h1>This is a Heading</h1>
     <p>This is a paragraph.</p>
     -->
+
+    <script>
+        function tempBadge() {
+            alert("Ask the receptionist about getting a temporary badge, or call the service center if there is no receptionist present.");
+        }
+        function assist() {
+            alert("Ask the receptionist for assistance on any questions or concerns you may have!");
+        }
+    </script>
 
 </body>
 </html>

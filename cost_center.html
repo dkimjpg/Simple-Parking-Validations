@@ -8,23 +8,25 @@
 
     <h1>Please enter your Name, IO or Cost Center code, and the code provider's name below.</h1>
 
-    <textarea rows="1" cols="25" placeholder="Name"></textarea>
+    <textarea id="nameInfo" rows="1" cols="25" placeholder="Name"></textarea>
     <br>
-    <textarea rows="1" cols="25" placeholder="IO or Cost Center Code"></textarea>
+    <textarea id="ioCode" rows="1" cols="25" placeholder="IO or Cost Center Code"></textarea>
     <br>
-    <textarea rows="1" cols="25" placeholder="Code Provider's Name"></textarea>
+    <textarea id="provider" rows="1" cols="25" placeholder="Code Provider's Name"></textarea>
     <br>
     <a href="index.html">
         <button type="button">Cancel</button>
     </a>
-    <a href="parking_code.html"> <!-- Put some JavaScript code here to actually extract the info from the name and alias textareas-->
-        <button type="button">Submit</button>
-    </a>
+    <!--<a href="parking_code.html"> --> <!-- Put some JavaScript code here to actually extract the info from the name and alias textareas-->
+    <button id="infoSubmission" type="button">Submit</button>
+    <!-- </a> -->
 
     <!--
     <h1>This is a Heading</h1>
     <p>This is a paragraph.</p>
     -->
+
+    <script src="cc_write.js"></script>
 
 </body>
 </html>
