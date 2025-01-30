@@ -1,21 +1,7 @@
-//const reader = require('xlsx');
-//import XLSX from 'xlsx';
 const XLSX = require("xlsx");
 const path = require('path');
 
 const infoButton = document.getElementById("infoSubmission");
-//const names = document.getElementById("nameInfo");
-//const alias = document.getElementById("aliasInfo");
-
-
-/*
-// get today's date
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear();
-today = mm + '/' + dd + '/' + yyyy;
-*/
 
 infoButton.addEventListener('click', function() {
     console.log('got here');
@@ -36,6 +22,7 @@ infoButton.addEventListener('click', function() {
         // get today's date
         const today = new Date().toLocaleDateString();
 
+        // puts together date, employee alias, and employee name
         const newData = [
             [today, aliasText, nameText]
         ];
