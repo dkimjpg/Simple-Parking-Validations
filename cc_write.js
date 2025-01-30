@@ -3,13 +3,38 @@ const path = require('path');
 
 const infoButton = document.getElementById("infoSubmission");
 
+const nameInfo = document.getElementById("nameInfo");
+const ioCodeInput = document.getElementById("ioCode");
+const provider = document.getElementById("provider");
+
+const errorModal = document.getElementById("errorModal");
+const modalClose = document.getElementById("modalClose");
+
+function showError(message) {
+    document.getElementById("errorMessage").textContent = message;
+    errorModal.style.display = "block";
+}
+
+modalClose.addEventListener('click', function() {
+    errorModal.style.display = "none";
+    if (!nameInfo.value.trim()) {
+        nameInfo.focus();
+    }
+    else if (!ioCodeInput.value.trim()) {
+        ioCodeInput.focus();
+    }
+    else if (!provider.value.trim()) {
+        provider.focus();
+    }
+});
+
 infoButton.addEventListener('click', function() {
-    const nameText = document.getElementById("nameInfo").value.trim();
-    const ioCode = document.getElementById("ioCode").value.trim();
-    const providerName = document.getElementById("provider").value.trim();
+    const nameText = nameInfo.value.trim();
+    const ioCode = ioCodeInput.value.trim();
+    const providerName = provider.value.trim();
 
     if (!nameText || !ioCode || !providerName ) {
-        alert('Please enter name, IO/Cost Center code, and code provider');
+        showError('Please enter name, IO/Cost Center code, and code provider');
         return;
     }
 

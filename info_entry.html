@@ -24,10 +24,12 @@
         <button type="button">I have an IO or Cost Center code</button>
     </a>
 
-    <!--
-    <h1>This is a Heading</h1>
-    <p>This is a paragraph.</p>
-    -->
+    <div id="errorModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000;">
+        <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; width: 80%; max-width: 500px; border-radius: 5px;">
+            <p id="errorMessage">Please enter both name and alias</p>
+            <button id="modalClose" style="margin-top: 10px;">OK</button>
+        </div>
+    </div>
 
     <!--<script src="read.js"></script>-->
     <script src="write.js"></script>

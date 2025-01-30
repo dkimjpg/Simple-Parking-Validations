@@ -3,10 +3,29 @@ const path = require('path');
 
 const infoButton = document.getElementById("infoSubmission");
 
-infoButton.addEventListener('click', function() {
-    const nameText = document.getElementById("nameInfo").value.trim();
-    const aliasText = document.getElementById("aliasInfo").value.trim();
+const nameInfo = document.getElementById("nameInfo");
+const aliasInfo = document.getElementById("aliasInfo");
 
+const errorModal = document.getElementById("errorModal");
+const modalClose = document.getElementById("modalClose");
+
+function showError(message) {
+    document.getElementById("errorMessage").textContent = message;
+    errorModal.style.display = "block";
+}
+
+modalClose.addEventListener('click', function() {
+    errorModal.style.display = "none";
+    if (!nameInfo.value.trim()) {
+        nameInfo.focus();
+    }
+    else if (!aliasInfo.value.trim()) {
+        aliasInfo.focus();
+    }
+});
+
+infoButton.addEventListener('click', function() {
+    /*
     if (!nameText || !aliasText) {
         alert('Please enter both name and alias');
         setTimeout(() => {
@@ -16,6 +35,15 @@ infoButton.addEventListener('click', function() {
                 document.getElementById("aliasInfo").focus();
             }
         }, 100);
+        return;
+    }
+    */
+    
+    const nameText = nameInfo.value.trim();
+    const aliasText = aliasInfo.value.trim();
+
+    if (!nameText || !aliasText) {
+        showError('Please enter both name and alias');
         return;
     }
 
