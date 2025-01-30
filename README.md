@@ -28,7 +28,7 @@ UPDATE (1/28/2025): This project now uses excel files (.xlsx) instead of CSV fil
 - Handles a few other potential requests that a front desk might get from employees and visitors
 
 # To-Do
-- [ ] Add functionality to the parking validation code distribution so employees can actually get a code instead of the placeholder text
+- [x] Add functionality to the parking validation code distribution so employees can actually get a code instead of the placeholder text
   - Will need to write some JavaScript code for this, specifically some code to read from a csv file and write to a csv file
 - [ ] Add functionality to check if there are no more available parking validation codes left
 - [x] Add a button to handle cost center codes for parking validation
