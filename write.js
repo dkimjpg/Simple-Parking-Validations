@@ -48,7 +48,7 @@ infoButton.addEventListener('click', function() {
     }
 
     try {
-        const filePath = path.join(__dirname, 'parkingDataTest2.xlsx');
+        const filePath = path.join(__dirname, 'Employee Logs/parkingDataTest2.xlsx');
         const workbook = XLSX.readFile(filePath);
         const sheetName = 'Sheet1';
         const worksheet = workbook.Sheets[sheetName];

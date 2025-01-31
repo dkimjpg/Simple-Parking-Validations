@@ -1,6 +1,6 @@
 const reader = require('xlsx');
 //currently, the excel test file is being read, change this behavior to either detect any excel files or something else
-const file = reader.readFile('./parkingCodeTest1.xlsx');
+const file = reader.readFile('Parking Codes/parkingCodeTest1.xlsx');
 
 const readCode = document.getElementById("getCode");
 
@@ -21,7 +21,7 @@ firstSheet['C1'] = {
     v: nextRow,
     t: 'n'
 };
-reader.writeFile(file, './parkingCodeTest1.xlsx');
+reader.writeFile(file, 'Parking Codes/parkingCodeTest1.xlsx');
 
 /*
 let data = [];
