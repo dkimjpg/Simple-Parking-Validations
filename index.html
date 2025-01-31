@@ -15,17 +15,37 @@
     <button onclick="tempBadge()" type="button">Temporary Badge</button> <br>
     <button onclick="assist()" type="button">Need Assistance</button>
 
+    <div id="errorModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000;">
+        <div class="modal-content" style="background-color: white; margin: 15% auto; padding: 20px; width: 80%; max-width: 500px; border-radius: 5px;">
+            <p id="errorMessage">Please enter both name and alias</p>
+            <button id="modalClose" style="margin-top: 10px;">OK</button>
+        </div>
+    </div>
+
     <!--
     <h1>This is a Heading</h1>
     <p>This is a paragraph.</p>
     -->
 
     <script>
-        function tempBadge() {
-            alert("Ask the receptionist about getting a temporary badge, or call the service center if there is no receptionist present.");
+        const errorModal = document.getElementById("errorModal");
+        const modalClose = document.getElementById("modalClose");
+
+        function showError(message) {
+            document.getElementById("errorMessage").textContent = message;
+            errorModal.style.display = "block";
         }
+
+        modalClose.addEventListener('click', function() {
+            errorModal.style.display = "none";
+        });        
+
+        function tempBadge() {
+            showError("Ask the receptionist about getting a temporary badge, or call the service center if there is no receptionist present.");
+        }
+
         function assist() {
-            alert("Ask the receptionist for assistance on any questions or concerns you may have!");
+            showError("Ask the receptionist for assistance on any questions or concerns you may have!")
         }
     </script>
 
