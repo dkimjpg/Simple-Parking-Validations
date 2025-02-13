@@ -8,6 +8,8 @@ I plan on improving it with a more modern but simplistic design as I work on thi
 own parking validation code system, you're putting a lot of sensitive employee data at risk. This is just a personal project, nothing
 special.
 
+For the Python and Java versions of this app, click here: [https://github.com/dkimjpg/Simple-Parking-Validations---Java---Python](https://github.com/dkimjpg/Simple-Parking-Validations---Java---Python)
+
 UPDATE (1/28/2025): This project went from using only pure JavaScript to using Node and then I ended up having to use Electron to make this an app that runs locally on a computer ever since I learned that it isn't possible to directly modify excel or csv files from a website. To do that, I needed to use Electron, so now I've ended up creating a desktop app.
 
 # How parking validation code distribution works:
